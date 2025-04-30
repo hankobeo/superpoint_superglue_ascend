@@ -6,14 +6,14 @@ using namespace cv;
 
 int main()
 {
-    uint32_t g_modelWidth = 1280;
-    uint32_t g_modelHeight = 1024;
+    uint32_t g_modelWidth = 1920;
+    uint32_t g_modelHeight = 1080;
 
     std::string imgname1 = "../images/1_IR.jpg";
     std::string imgname2 = "../images/1_VL.jpg";
 
-    const char* g_modelPath_extract = "../model/superpoint_1280_1024.om";                  // 关键点提取模型
-    const char* g_modelPath_matching = "../model/superglue_outdoor_end2end.om";     // 图像配准模型
+    const char* g_modelPath_extract = "../model/superpoint_1920_1080.om";                  // 关键点提取模型
+    const char* g_modelPath_matching = "../model/superglue_outdoor_1920_1080_static.om";     // 图像配准模型
 
     superpoint * extract_left = new superpoint(g_modelPath_extract, g_modelWidth, g_modelHeight);
     superpoint * extract_right = new superpoint(g_modelPath_extract, g_modelWidth, g_modelHeight);

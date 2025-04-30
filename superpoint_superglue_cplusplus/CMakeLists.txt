@@ -28,7 +28,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "-fPIC -O0 -g -Wall")
 message(STATUS "Current build type: ${CMAKE_BUILD_TYPE}")
 
 # set ascend path
-include_directories(${TooChainInclude} ${CMAKE_SOURCE_DIR}/../third_party/opencv-3.4.16/install-aarch64/include)   # ${OpencvInclude}
-link_directories(${ToolChainLib} ${CMAKE_SOURCE_DIR}/../third_party/opencv-3.4.16/install-aarch64/lib)
+include_directories(${TooChainInclude} ${CMAKE_SOURCE_DIR}/../../third_party/opencv-3.4.16/install-aarch64/include)   # ${OpencvInclude}
+link_directories(${ToolChainLib} ${CMAKE_SOURCE_DIR}/../../third_party/opencv-3.4.16/install-aarch64/lib)
 
 add_subdirectory("./demo")

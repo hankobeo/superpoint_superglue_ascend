@@ -74,13 +74,13 @@ def main():
                                    "descriptors_1",  # batch x feature_dims x feature_number1
                                   ],  # the model input names
                     #   output_names=["scores"],  # the model output names
-                      dynamic_axes={'keypoints_0': {1: 'feature_number_0'},
-                                    'scores_0': {1: 'feature_number_0'},
-                                    'descriptors_0': {2: 'feature_number_0'},
-                                    'keypoints_1': {1: 'feature_number_1'},
-                                    'scores_1': {1: 'feature_number_1'},
-                                    'descriptors_1': {2: 'feature_number_1'},
-                                    }  # dynamic model input names
+                    #   dynamic_axes={'keypoints_0': {1: 'feature_number_0'},            # 动态分辨率开关
+                    #                 'scores_0': {1: 'feature_number_0'},
+                    #                 'descriptors_0': {2: 'feature_number_0'},
+                    #                 'keypoints_1': {1: 'feature_number_1'},
+                    #                 'scores_1': {1: 'feature_number_1'},
+                    #                 'descriptors_1': {2: 'feature_number_1'},
+                    #                 }  # dynamic model input names
                       )
 
     # check onnx model

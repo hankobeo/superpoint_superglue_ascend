@@ -55,7 +55,7 @@ def main():
                       do_constant_folding=True,  # whether to execute constant folding for optimization
                       input_names=['input'],  # the model input names
                       output_names=['scores', 'descriptors'],  # the model output names
-                      dynamic_axes={'input': {2: 'image_height', 3: "image_width"}}  # dynamic input names
+                      # dynamic_axes={'input': {2: 'image_height', 3: "image_width"}}  # dynamic input names    # 动态分辨率开关
                       )
 
     # check onnx conversion

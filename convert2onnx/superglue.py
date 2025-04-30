@@ -266,8 +266,8 @@ class SuperGlue(nn.Module):
         # kpts0 = normalize_keypoints(kpts0, data['image0'].shape)
         # kpts1 = normalize_keypoints(kpts1, data['image1'].shape)
 
-        kpts0 = normalize_keypoints(kpts0, [1024, 1280])
-        kpts1 = normalize_keypoints(kpts1, [1024, 1280])
+        kpts0 = normalize_keypoints(kpts0, [1080, 1920])   # 大小为superpoint输入的大小
+        kpts1 = normalize_keypoints(kpts1, [1080, 1920])
 
         # Keypoint MLP encoder.
         desc0 = desc0 + self.kenc(kpts0, scores0)
