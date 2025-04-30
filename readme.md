@@ -19,8 +19,10 @@
 两种方式：
 - 一种指定输入维度，即指定特征点个数，转onnx时不转出动态分辨率（关闭动态分辨率开关）
 ![superglue_static](./assets/superglue_static.png)
-再转静态的om
-atc --model=superglue_outdoor_end2end.onnx --framework=5 --output=superglue_outdoor_end2end --soc_version=Ascend310
+再转静态的om:
+
+    
+    atc --model=superglue_outdoor_end2end.onnx --framework=5 --output=superglue_outdoor_end2end --soc_version=Ascend310
 
 - 一种不指定输入维度（打开动态分辨率开关），转onnx时设置维度，有两种转换方式：
 ![superglue_dynamic](./assets/superglue_dynamic.png)
