@@ -26,11 +26,14 @@ atc --model=superglue_outdoor_end2end.onnx --framework=5 --output=superglue_outd
 ![superglue_dynamic](./assets/superglue_dynamic.png)
 
 1、设置输入特征点个数的大小，如512个点：
-atc --model=superglue_outdoor.onnx --framework=5 --output=superglue --input_shape="keypoints_0:1,512,2;scores_0:1,512;descriptors_0:1,256,512;keypoints_1:1,512,2;scores_1:1,512;descriptors_1:1,256,512"  --soc_version=Ascend310
+
+    atc --model=superglue_outdoor.onnx --framework=5 --output=superglue --input_shape="keypoints_0:1,512,2;scores_0:1,512;descriptors_0:1,256,512;keypoints_1:1,512,2;scores_1:1,512;descriptors_1:1,256,512"  --soc_version=Ascend310
 
 2、动态特征点个数设置，利用ascend中的动态维度(ND)，特征点个数可以自适应：
-atc --model=superglue_outdoor_dynamic.onnx --framework=5 --output=superglue_outdoor_dynamic --soc_version=Ascend310 --input_shape="keypoints_0:1,-1,2;scores_0:1,-1;descriptors_0:1,256,-1;keypoints_1:1,-1,2;scores_1:1,-1;descriptors_1:1,256,-1" --dynamic_dims="512,512,512,512,512,512;1024,1024,1024,1024,1024,1024" --input_format=ND
+
+    atc --model=superglue_outdoor_dynamic.onnx --framework=5 --output=superglue_outdoor_dynamic --soc_version=Ascend310 --input_shape="keypoints_0:1,-1,2;scores_0:1,-1;descriptors_0:1,256,-1;keypoints_1:1,-1,2;scores_1:1,-1;descriptors_1:1,256,-1" --dynamic_dims="512,512,512,512,512,512;1024,1024,1024,1024,1024,1024" --input_format=ND
 
 ## 2、程序运行
-mkdir build && cd build && cmake .. && make
-./super_demo
+
+    mkdir build && cd build && cmake .. && make
+    ./super_demo
